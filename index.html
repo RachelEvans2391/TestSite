@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html data-ng-app="example">
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Test Site</title>
+    </head>
+
+    <body data-ng-controller="LayoutCtrl as layout">
+
+
+        <p>{{ layout.welcome }}</p>
+        <p>Welcome {{ layout.name }}</p>
+
+        <div data-ng-controller="WelcomeCtrl as welcome">
+
+            <form data-ng-submit="welcome.change()">
+                <label>Name:</label>
+                <input name="name" type="text" data-ng-model="welcome.name" placeholder="{{ layout.name }}"/>
+                <button type="submit">Enter Site</button>
+            </form>
+        </div>
+
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.js"></script>
+        <script type="text/javascript" src="./assets/js/app.js"></script>
+
+    </body>
+</html>
